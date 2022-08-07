@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnRoll.setOnClickListener { rollDice() }
+
+        //Do a dice roll when the app starts
+        rollDice()
+
     }
 
     /**
@@ -39,14 +43,16 @@ class MainActivity : AppCompatActivity() {
             4 -> diceImage.setImageResource(R.drawable.dice_4)
             5 -> diceImage.setImageResource(R.drawable.dice_5)
             6 -> diceImage.setImageResource(R.drawable.dice_6)
+        }
     }
-}
 
-class Dice(private val numSides: Int) {
+    class Dice(private val numSides: Int) {
 
-    fun roll(): Int {
-        return (1..numSides).random()
+        fun roll(): Int {
+            return (1..numSides).random()
+        }
     }
+
 }
 
 
