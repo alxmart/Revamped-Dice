@@ -1,7 +1,7 @@
 package com.example.revampeddice
 
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.revampeddice.databinding.ActivityMainBinding
 
@@ -31,8 +31,14 @@ class MainActivity : AppCompatActivity() {
         val diceRoll = dice.roll()
 
         // Update the screen with the dice roll
-        val resultTextView: TextView = binding.tvNumber
-        resultTextView.text = diceRoll.toString()
+        val diceImage: ImageView = binding.imgDice
+        when (diceRoll) {
+            1 -> diceImage.setImageResource(R.drawable.dice_1)
+            2 -> diceImage.setImageResource(R.drawable.dice_2)
+            3 -> diceImage.setImageResource(R.drawable.dice_3)
+            4 -> diceImage.setImageResource(R.drawable.dice_4)
+            5 -> diceImage.setImageResource(R.drawable.dice_5)
+            6 -> diceImage.setImageResource(R.drawable.dice_6)
     }
 }
 
